@@ -13,6 +13,15 @@
 };
 
 / {
+        combos {
+            compatible = "zmk,combos";
+            combo_caps_lock {
+                timeout-ms = <100>;
+                key-positions = <24 24>;
+                bindings = <&kp CAPSLOCK>;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
