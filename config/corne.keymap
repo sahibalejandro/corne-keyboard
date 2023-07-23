@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 &sk {
+  quick-release;
   release-after-ms = <1500>;
 };
 
