@@ -13,15 +13,6 @@
 };
 
 / {
-        combos {
-            compatible = "zmk,combos";
-            combo_caps_lock {
-                timeout-ms = <100>;
-                key-positions = <24 24>;
-                bindings = <&kp CAPSLOCK>;
-            };
-        };
-
         keymap {
                 compatible = "zmk,keymap";
 
@@ -59,9 +50,9 @@
 // | SHFT   |  ~  |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" | CTRL |
 //                    | GUI |     | ENT |   | SPC |     | ALT |
                         bindings = <
-   &kp LS(TAB) &kp EXCL  &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &trans      &kp GRAVE &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &trans
-   &kp LSHFT   &kp TILDE &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp RCTRL
+   &kp LS(TAB)  &kp EXCL  &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
+   &trans       &kp GRAVE &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &trans
+   &kp CAPSLOCK &kp TILDE &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp RCTRL
                                 &kp LGUI &trans   &kp RET     &kp SPACE &trans    &kp RALT
                         >;
                 };
