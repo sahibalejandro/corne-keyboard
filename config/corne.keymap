@@ -45,9 +45,9 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// |      |  `  |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |
-// | SHFT |  ~  |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" | CTRL |
+// | S(TAB) |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// |        |  `  |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |
+// | SHFT   |  ~  |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" | CTRL |
 //                    | GUI |     | ENT |   | SPC |     | ALT |
                         bindings = <
    &kp LS(TAB) &kp EXCL  &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
