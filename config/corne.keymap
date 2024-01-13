@@ -26,7 +26,7 @@
             td2: lshft_to_lctrl {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
-                tapping-term-ms = <180>;
+                tapping-term-ms = <250>;
                 bindings = <&kp LSHFT>, <&kp LCTRL>;
             };
 
@@ -36,7 +36,7 @@
             td3: rctrl_to_rshft {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
-                tapping-term-ms = <180>;
+                tapping-term-ms = <250>;
                 bindings = <&kp RCTRL>, <&kp RSHFT>;
             };
         };
