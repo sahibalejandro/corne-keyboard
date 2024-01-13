@@ -8,29 +8,36 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-&sk {
-    quick-release;
-};
-
 / {
         behaviors {
             //
             // Activate/deactivate lower layer on double tap lower layer key
             //
-            td0: tap_dance_0 {
+            td1: toggle_layer_1 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
-                label = "TAP_DANCE_0";
                 tapping-term-ms = <180>;
                 bindings = <&mo 1>, <&tog 1>;
             };
 
-            td1: tap_dance_1 {
+            //
+            // Switch LSHFT to LCTRL on second tap
+            //
+            td2: lshft_to_lctrl {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
-                label = "TAP_DANCE_1";
                 tapping-term-ms = <180>;
                 bindings = <&kp LSHFT>, <&kp LCTRL>;
+            };
+
+            //
+            // Switch RCTRL to RSHFT on second tap
+            //
+            td3: rctrl_to_rshft {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                tapping-term-ms = <180>;
+                bindings = <&kp RCTRL>, <&kp RSHFT>;
             };
         };
 
@@ -38,18 +45,19 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// ---------------------------------------------------------------------------------
-// |  TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BKSP  |
-// |  ESC  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '    |
-// | LSHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | RCTRL |
-//                     | CMD | LWR | RET |   | SPC | RSE | ALT |
+// ---------------------------------------------------------------------------------------------
+// |  TAB        |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BKSP        |
+// |  ESC        |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '          |
+// | LSHFT/LCTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | RCTRL/RSHFT |
+//                           | CMD | LWR | RET |   | SPC | RSE | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T     &kp Y     &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp ESC   &kp A &kp S &kp D &kp F &kp G     &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &td1      &kp Z &kp X &kp C &kp V &kp B     &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &sk RCTRL
-                   &kp LGUI    &td0  &kp RET   &kp SPACE &mo 2  &kp RALT
+   &kp TAB &kp Q &kp W &kp E &kp R &kp T     &kp Y     &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp ESC &kp A &kp S &kp D &kp F &kp G     &kp H     &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &td2    &kp Z &kp X &kp C &kp V &kp B     &kp N     &kp M  &kp COMMA &kp DOT &kp FSLH &td3
+                 &kp LGUI    &td1  &kp RET   &kp SPACE &mo 2  &kp RALT
                         >;
                 };
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |    |  1    |  2    |  3   |  4  |  5    |   |  6   |  7   |  8   |  9    |  0    |    |
