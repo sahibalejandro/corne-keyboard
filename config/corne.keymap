@@ -21,6 +21,15 @@
           };
         };
 
+        behaviors {
+          cmd_tab: cmd_tab {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <1>;
+            bindings = <&kp Q> <&kp TAB>;
+            mods = <(MOD_LGUI)>;
+          };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
