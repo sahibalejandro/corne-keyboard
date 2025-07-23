@@ -10,7 +10,7 @@
 
 &mt {
   flavor = "balanced";
-  require-prior-idle-ms = <100>;
+  require-prior-idle-ms = <80>;
 };
 
 / {
