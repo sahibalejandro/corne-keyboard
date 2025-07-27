@@ -14,6 +14,10 @@
   require-prior-idle-ms = <50>;
 };
 
+&lt {
+  quick-tap-ms = <150>;
+};
+
 / {
         conditional_layers {
           compatible = "zmk,conditional-layers";
@@ -31,16 +35,6 @@
             mods = <(MOD_LGUI)>;
             keep-mods = <(MOD_LGUI)>;
           };
-
-          qmt: quick_mod_tab {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
-            display-name = "Quick-Mod-Tap";
-            quick-tap-ms = <150>;
-          };
         };
 
         keymap {
@@ -56,7 +50,7 @@
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤───────────────┤  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤───────────────┤
     &none           &mt LSHFT Z     &kp X           &kp C           &kp V           &kp B              &kp N           &kp M           &kp COMMA       &kp DOT         &mt RSHFT FSLH  &none
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤───────────────┤  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤───────────────┤
-                                                    &qmt TAB LGUI   &mo 1           &kp RET            &kp SPACE       &mo 2           &qmt BSPC RALT
+                                                    &kp LGUI        &lt 1 TAB       &kp RET            &kp SPACE       &lt 2 BSPC      &kp RALT
 //                                                 ╰───────────────┴───────────────┴───────────────╯  ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
