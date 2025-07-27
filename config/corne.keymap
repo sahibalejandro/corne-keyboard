@@ -32,13 +32,14 @@
             keep-mods = <(MOD_LGUI)>;
           };
 
-          rt: retro_tap {
-              compatible = "zmk,behavior-hold-tap";
-              #binding-cells = <2>;
-              bindings = <&kp>, <&kp>;
-              display-name = "Retro-Tap";
-              retro-tap;
-              quick-tap-ms = <150>;
+          qmt: quick_mod_tab {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            display-name = "Quick-Mod-Tap";
+            quick-tap-ms = <150>;
           };
         };
 
@@ -55,7 +56,7 @@
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤───────────────┤  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤───────────────┤
     &none           &mt LSHFT Z     &kp X           &kp C           &kp V           &kp B              &kp N           &kp M           &kp COMMA       &kp DOT         &mt RSHFT FSLH  &none
 // ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤───────────────┤  ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤───────────────┤
-                                                    &rt TAB LGUI    &mo 1           &kp RET            &kp SPACE       &mo 2           &rt BSPC RALT
+                                                    &qmt TAB LGUI   &mo 1           &kp RET            &kp SPACE       &mo 2           &qmt BSPC RALT
 //                                                 ╰───────────────┴───────────────┴───────────────╯  ╰───────────────┴───────────────┴───────────────╯
                         >;
                 };
